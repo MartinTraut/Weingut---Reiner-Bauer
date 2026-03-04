@@ -3,19 +3,24 @@
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 const heroSlides = [
   {
-    src: "/images/hero-2.png",
-    alt: "Weinverkostung im Keller — Weingut Rainer Bauer",
+    src: "/images/weinberg-sonnenuntergang.jpg",
+    alt: "Weinberge im goldenen Sonnenuntergang — Weingut Rainer Bauer",
   },
   {
-    src: "/images/hero-1.png",
-    alt: "Familie Bauer beim Anstoßen mit eigenen Weinen",
+    src: "/images/keller-barrique.jpg",
+    alt: "Barriquefässer im historischen Gewölbekeller",
   },
   {
-    src: "/images/hero-3.png",
-    alt: "Kellermeister Martin Bauer an den Edelstahltanks",
+    src: "/images/weinglaeser-sonnenuntergang.jpg",
+    alt: "Weinverkostung mit Blick auf die Weinberge bei Sonnenuntergang",
+  },
+  {
+    src: "/images/weingut-terrasse.jpg",
+    alt: "Genuss auf der Weingut-Terrasse mit erlesenen Weinen und Trauben",
   },
 ];
 
@@ -48,8 +53,9 @@ export default function Hero() {
             alt={heroSlides[currentSlide].alt}
             fill
             priority
-            className="object-cover"
+            className="object-cover image-sharp"
             sizes="100vw"
+
           />
         </motion.div>
       </AnimatePresence>
@@ -66,15 +72,25 @@ export default function Hero() {
       />
 
       {/* Decorative lines */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-32 bg-gradient-to-b from-transparent via-gold/20 to-transparent z-[2]" />
-      <div className="absolute bottom-32 left-1/2 -translate-x-1/2 w-px h-24 bg-gradient-to-b from-gold/20 to-transparent z-[2]" />
+      <motion.div
+        initial={{ scaleY: 0 }}
+        animate={{ scaleY: 1 }}
+        transition={{ duration: 1.5, delay: 0.3, ease: [0.25, 0.4, 0.25, 1] }}
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-32 bg-gradient-to-b from-transparent via-gold/20 to-transparent z-[2] origin-top"
+      />
+      <motion.div
+        initial={{ scaleY: 0 }}
+        animate={{ scaleY: 1 }}
+        transition={{ duration: 1.2, delay: 1.0, ease: [0.25, 0.4, 0.25, 1] }}
+        className="absolute bottom-32 left-1/2 -translate-x-1/2 w-px h-24 bg-gradient-to-b from-gold/20 to-transparent z-[2] origin-top"
+      />
 
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
         {/* Logo */}
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: -20, scale: 0.9 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
           className="flex justify-center mb-8"
         >
@@ -89,10 +105,10 @@ export default function Hero() {
 
         {/* Overline */}
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 20, filter: "blur(4px)" }}
+          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="font-[family-name:var(--font-inter)] text-[11px] md:text-[12px] tracking-[0.4em] uppercase text-gold/70 mb-8"
+          className="font-[family-name:var(--font-inter)] text-[11px] md:text-[12px] tracking-[0.4em] uppercase text-gold/80 mb-8"
         >
           Familienweingut seit 1989 &middot; Talheim, Württemberg
         </motion.p>
@@ -102,7 +118,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.0 }}
-          className="font-[family-name:var(--font-playfair)] text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-cream tracking-[0.04em] leading-[0.95]"
+          className="font-[family-name:var(--font-playfair)] text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-cream tracking-[0.04em] leading-[0.95] text-shadow-luxury"
         >
           Weingut
           <br />
@@ -119,10 +135,10 @@ export default function Hero() {
 
         {/* Tagline */}
         <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          initial={{ opacity: 0, filter: "blur(6px)" }}
+          animate={{ opacity: 1, filter: "blur(0px)" }}
           transition={{ duration: 1, delay: 1.6 }}
-          className="font-[family-name:var(--font-cormorant)] text-xl md:text-2xl lg:text-3xl text-cream/60 tracking-wide italic"
+          className="font-[family-name:var(--font-cormorant)] text-xl md:text-2xl lg:text-3xl text-cream/70 tracking-wide italic"
         >
           Tradition &middot; Handwerk &middot; Leidenschaft
         </motion.p>
@@ -134,18 +150,18 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 2.0 }}
           className="mt-12 md:mt-16 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6"
         >
-          <a
-            href="#weine"
-            className="font-[family-name:var(--font-inter)] text-[12px] tracking-[0.25em] uppercase text-warmblack bg-gold hover:bg-gold-light px-10 py-4 transition-all duration-500"
+          <Link
+            href="/weine"
+            className="font-[family-name:var(--font-inter)] text-[12px] tracking-[0.25em] uppercase text-warmblack bg-gold hover:bg-gold-light px-10 py-4 transition-all duration-500 hover:shadow-[0_0_30px_rgba(197,164,126,0.2)]"
           >
             Unsere Weine
-          </a>
-          <a
-            href="#weingut"
-            className="font-[family-name:var(--font-inter)] text-[12px] tracking-[0.25em] uppercase text-cream/70 border border-cream/20 px-10 py-4 hover:border-gold/50 hover:text-gold transition-all duration-500"
+          </Link>
+          <Link
+            href="/weingut"
+            className="font-[family-name:var(--font-inter)] text-[12px] tracking-[0.25em] uppercase text-cream/80 border border-cream/25 px-10 py-4 hover:border-gold/50 hover:text-gold transition-all duration-500"
           >
             Entdecken
-          </a>
+          </Link>
         </motion.div>
       </div>
 
@@ -155,8 +171,8 @@ export default function Hero() {
           <button
             key={i}
             onClick={() => setCurrentSlide(i)}
-            className={`w-8 h-px transition-all duration-500 ${
-              i === currentSlide ? "bg-gold w-12" : "bg-cream/30"
+            className={`h-px transition-all duration-500 ${
+              i === currentSlide ? "bg-gold w-12" : "bg-cream/30 w-8"
             }`}
             aria-label={`Slide ${i + 1}`}
           />
@@ -172,10 +188,10 @@ export default function Hero() {
         style={{ animation: "scrollBounce 2s infinite" }}
       >
         <div className="flex flex-col items-center gap-2">
-          <span className="font-[family-name:var(--font-inter)] text-[10px] tracking-[0.3em] uppercase text-cream/30">
+          <span className="font-[family-name:var(--font-inter)] text-[10px] tracking-[0.3em] uppercase text-cream/40">
             Scroll
           </span>
-          <div className="w-px h-8 bg-gradient-to-b from-cream/30 to-transparent" />
+          <div className="w-px h-8 bg-gradient-to-b from-cream/40 to-transparent" />
         </div>
       </motion.div>
     </section>

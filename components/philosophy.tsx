@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { ScrollReveal } from "./scroll-reveal";
+import { ScrollReveal, LuxuryReveal } from "./scroll-reveal";
 
 const principles = [
   {
@@ -64,20 +64,21 @@ function PrincipleIcon({ icon }: { icon: string }) {
       </svg>
     ),
   };
-  return <div className="text-gold/60">{iconMap[icon]}</div>;
+  return <div className="text-gold/70">{iconMap[icon]}</div>;
 }
 
 export default function Philosophy() {
   return (
-    <section id="philosophie" className="relative overflow-hidden">
+    <section className="relative overflow-hidden">
       {/* Full-width image banner with Martin at the tanks */}
       <div className="relative h-[50vh] min-h-[400px]">
         <Image
-          src="/images/hero-3.png"
-          alt="Kellermeister Martin Bauer bei der Arbeit an den Edelstahltanks"
+          src="/images/keller-barrique.jpg"
+          alt="Barriquefässer im historischen Gewölbekeller"
           fill
-          className="object-cover"
+          className="object-cover image-sharp"
           sizes="100vw"
+
         />
         <div
           className="absolute inset-0"
@@ -90,8 +91,8 @@ export default function Philosophy() {
         {/* Centered quote over image */}
         <div className="absolute inset-0 flex items-center justify-center px-6">
           <blockquote className="max-w-3xl text-center">
-            <span className="font-[family-name:var(--font-playfair)] text-6xl md:text-7xl text-gold/20">&bdquo;</span>
-            <p className="font-[family-name:var(--font-cormorant)] text-xl md:text-2xl lg:text-3xl text-cream/90 italic leading-relaxed -mt-6">
+            <span className="font-[family-name:var(--font-playfair)] text-6xl md:text-7xl text-gold/25">&bdquo;</span>
+            <p className="font-[family-name:var(--font-cormorant)] text-xl md:text-2xl lg:text-3xl text-cream italic leading-relaxed -mt-6 text-shadow-luxury">
               Die Weine vom Weingut Rainer Bauer sind edle, sortentypische und
               genussreiche Charaktere — entstanden aus sorgfältiger, naturnaher
               Pflege der Reben und naturorientierter Verarbeitung der Trauben.
@@ -104,29 +105,29 @@ export default function Philosophy() {
       <div className="section-padding bg-gradient-warm">
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
-          <ScrollReveal className="text-center mb-20 md:mb-28">
-            <p className="font-[family-name:var(--font-inter)] text-[11px] tracking-[0.4em] uppercase text-gold/60 mb-6">
+          <LuxuryReveal className="text-center mb-20 md:mb-28">
+            <p className="font-[family-name:var(--font-inter)] text-[11px] tracking-[0.4em] uppercase text-gold/80 mb-6">
               Unsere Philosophie
             </p>
             <h2 className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl lg:text-6xl text-cream tracking-wide">
               Handwerk &{" "}
-              <span className="italic text-gold/80">Leidenschaft</span>
+              <span className="italic text-gold/90">Leidenschaft</span>
             </h2>
             <div className="gold-line mx-auto mt-8" />
-          </ScrollReveal>
+          </LuxuryReveal>
 
           {/* Principles Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {principles.map((principle, index) => (
               <ScrollReveal key={principle.title} delay={index * 0.12}>
-                <div className="group text-center p-8 md:p-10 border border-gold/8 hover:border-gold/20 transition-all duration-700 bg-warmblack/20 hover:bg-warmblack/40">
+                <div className="group text-center p-8 md:p-10 border border-gold/8 hover:border-gold/25 transition-all duration-700 bg-warmblack/20 hover:bg-warmblack/40 luxury-card">
                   <div className="flex justify-center mb-6">
                     <PrincipleIcon icon={principle.icon} />
                   </div>
                   <h3 className="font-[family-name:var(--font-playfair)] text-lg md:text-xl text-cream mb-4 tracking-wide">
                     {principle.title}
                   </h3>
-                  <p className="font-[family-name:var(--font-cormorant)] text-base text-cream/45 leading-relaxed">
+                  <p className="font-[family-name:var(--font-cormorant)] text-base text-cream/60 leading-relaxed">
                     {principle.description}
                   </p>
                   <div className="w-0 h-px bg-gold/30 mx-auto mt-6 transition-all duration-700 group-hover:w-12" />

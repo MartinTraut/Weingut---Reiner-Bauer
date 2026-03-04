@@ -154,6 +154,11 @@
     text-wrap: balance;
   }
 
+  /* Luxury text shadow for headings over images */
+  .text-shadow-luxury {
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5), 0 4px 40px rgba(0, 0, 0, 0.3);
+  }
+
   .border-gradient-gold {
     border-image: linear-gradient(135deg, rgba(197, 164, 126, 0.3), rgba(197, 164, 126, 0.1)) 1;
   }
@@ -192,6 +197,12 @@
     pointer-events: none;
   }
 
+  /* Image sharpness */
+  .image-sharp {
+    image-rendering: -webkit-optimize-contrast;
+    filter: contrast(1.03) saturate(1.05);
+  }
+
   /* Section padding */
   .section-padding {
     padding: 7rem 1.5rem;
@@ -218,6 +229,15 @@
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
     pointer-events: none;
     z-index: 9999;
+  }
+
+  /* Luxury card hover glow */
+  .luxury-card {
+    transition: all 0.7s cubic-bezier(0.25, 0.4, 0.25, 1);
+  }
+  .luxury-card:hover {
+    box-shadow: 0 0 40px rgba(197, 164, 126, 0.06), 0 0 80px rgba(197, 164, 126, 0.03);
+    transform: translateY(-2px);
   }
 }
 
@@ -278,4 +298,22 @@
   0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
   40% { transform: translateY(-8px) translateX(-50%); }
   60% { transform: translateY(-4px) translateX(-50%); }
+}
+
+/* Luxury gold line reveal */
+@keyframes goldLineReveal {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 120px;
+    opacity: 1;
+  }
+}
+
+/* Subtle pulse glow for CTAs */
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 0 rgba(197, 164, 126, 0); }
+  50% { box-shadow: 0 0 20px rgba(197, 164, 126, 0.15); }
 }

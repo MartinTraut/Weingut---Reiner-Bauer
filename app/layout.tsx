@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Cormorant_Garamond, Inter } from "next/font/google";
 import "./globals.css";
+import Navigation from "@/components/navigation";
+import Footer from "@/components/footer";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -61,7 +63,9 @@ export default function RootLayout({
         className={`${playfair.variable} ${cormorant.variable} ${inter.variable} antialiased`}
       >
         <div className="grain" />
-        {children}
+        <Navigation />
+        <main className="relative">{children}</main>
+        <Footer />
       </body>
     </html>
   );

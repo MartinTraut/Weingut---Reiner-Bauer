@@ -3,64 +3,99 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { ScrollReveal, StaggerContainer, StaggerItem } from "./scroll-reveal";
+import { ScrollReveal, StaggerContainer, StaggerItem, LuxuryReveal } from "./scroll-reveal";
 
 const galleryImages = [
   {
-    src: "/images/hero-2.png",
-    alt: "Weinverkostung — Pipette füllt Rotwein ins Glas, Barriquefässer im Hintergrund",
-    caption: "Im Weinkeller",
+    src: "/images/keller-barrique.jpg",
+    alt: "Barriquefässer im historischen Gewölbekeller",
+    caption: "Im Gewölbekeller",
     span: "col-span-2 md:col-span-2",
     aspect: "aspect-[16/9]",
   },
   {
-    src: "/images/hero-1.png",
-    alt: "Familie Bauer — Martin, Tanja und Bärbel beim Anstoßen",
-    caption: "Familie Bauer",
-    span: "",
-    aspect: "aspect-square",
-  },
-  {
-    src: "/images/hero-3.png",
-    alt: "Kellermeister Martin Bauer an den Edelstahltanks",
-    caption: "Kellermeister Martin",
-    span: "",
-    aspect: "aspect-square",
-  },
-  {
-    src: "/images/old-visual.jpg",
-    alt: "Das Weingut Rainer Bauer in Talheim mit Weinbergen",
-    caption: "Das Weingut",
-    span: "",
-    aspect: "aspect-square",
-  },
-  {
-    src: "/images/old-traub11.jpg",
-    alt: "Blaue Rotweintrauben am Rebstock",
+    src: "/images/trauben-rot-nah.jpg",
+    alt: "Rotweintrauben in voller Reife am Rebstock",
     caption: "Rotweintrauben",
     span: "",
     aspect: "aspect-square",
   },
   {
-    src: "/images/old-traube1.jpg",
-    alt: "Reife weiße Trauben im Weinberg",
+    src: "/images/trauben-weiss-nah.jpg",
+    alt: "Weiße Trauben an der alten Rebe im Morgenlicht",
     caption: "Weißweintrauben",
     span: "",
     aspect: "aspect-square",
   },
   {
-    src: "/images/old-traub12.jpg",
-    alt: "Rosé-Trauben in verschiedenen Farben am Rebstock",
-    caption: "Traubenvielfalt",
+    src: "/images/rotwein-bordeaux.jpg",
+    alt: "Edle Rotweinflaschen mit Weingläsern",
+    caption: "Edle Tropfen",
     span: "",
     aspect: "aspect-square",
   },
   {
-    src: "/images/old-traub16.jpg",
-    alt: "Weiße Trauben im goldenen Sonnenlicht",
-    caption: "Sonnenlicht im Weinberg",
+    src: "/images/weinflasche-holzkiste.jpg",
+    alt: "Weinflasche liebevoll in Holzkiste verpackt",
+    caption: "Handverlesene Weine",
+    span: "",
+    aspect: "aspect-square",
+  },
+  {
+    src: "/images/weinglaeser-sonnenuntergang.jpg",
+    alt: "Verschiedene Weine im Glas bei Sonnenuntergang über den Weinbergen",
+    caption: "Weinverkostung",
+    span: "",
+    aspect: "aspect-square",
+  },
+  {
+    src: "/images/trauben-gruen.jpg",
+    alt: "Grüne Trauben hängen am Rebstock mit Blick auf die Weinberge",
+    caption: "Im Weinberg",
+    span: "",
+    aspect: "aspect-square",
+  },
+  {
+    src: "/images/weinberg-sonnenuntergang.jpg",
+    alt: "Weinberge im goldenen Abendlicht",
+    caption: "Goldene Stunde",
     span: "col-span-2 md:col-span-2",
     aspect: "aspect-[16/9]",
+  },
+  {
+    src: "/images/weingut-terrasse.jpg",
+    alt: "Genuss auf der Terrasse — Wein, Trauben und Abendstimmung",
+    caption: "Weingut-Terrasse",
+    span: "",
+    aspect: "aspect-square",
+  },
+  {
+    src: "/images/weinregal-dunkel.jpg",
+    alt: "Edles Weinregal mit erlesener Flaschensammlung",
+    caption: "Die Schatzkammer",
+    span: "",
+    aspect: "aspect-square",
+  },
+  {
+    src: "/images/weinflaschen-holzkiste-premium.jpg",
+    alt: "Premium-Weinflaschen in edler Holzkiste",
+    caption: "Premium-Auswahl",
+    span: "col-span-2 md:col-span-2",
+    aspect: "aspect-[16/9]",
+  },
+  {
+    src: "/images/rotwein-einschenken.jpg",
+    alt: "Rotwein wird aus der Flasche ins Glas eingeschenkt",
+    caption: "Weingenuss",
+    span: "",
+    aspect: "aspect-square",
+  },
+  {
+    src: "/images/weinberg-panorama.jpg",
+    alt: "Herbstliches Weinberg-Panorama mit Rebzeilen",
+    caption: "Herbst im Weinberg",
+    span: "",
+    aspect: "aspect-square",
   },
 ];
 
@@ -73,16 +108,16 @@ export default function Gallery() {
 
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <ScrollReveal className="text-center mb-16 md:mb-24">
-          <p className="font-[family-name:var(--font-inter)] text-[11px] tracking-[0.4em] uppercase text-gold/60 mb-6">
+        <LuxuryReveal className="text-center mb-16 md:mb-24">
+          <p className="font-[family-name:var(--font-inter)] text-[11px] tracking-[0.4em] uppercase text-gold/80 mb-6">
             Impressionen
           </p>
           <h2 className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl lg:text-6xl text-cream tracking-wide">
             Momente aus dem{" "}
-            <span className="italic text-gold/80">Weingut</span>
+            <span className="italic text-gold/90">Weingut</span>
           </h2>
           <div className="gold-line mx-auto mt-8" />
-        </ScrollReveal>
+        </LuxuryReveal>
 
         {/* Gallery Grid */}
         <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
@@ -96,8 +131,9 @@ export default function Gallery() {
                   src={image.src}
                   alt={image.alt}
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-700"
+                  className="object-cover group-hover:scale-105 transition-transform duration-700 image-sharp"
                   sizes={image.span ? "(max-width: 768px) 100vw, 50vw" : "(max-width: 768px) 50vw, 25vw"}
+
                   loading="lazy"
                 />
                 {/* Hover overlay */}
@@ -121,7 +157,7 @@ export default function Gallery() {
             href="https://www.instagram.com/weingut_rainer_bauer/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 font-[family-name:var(--font-inter)] text-[12px] tracking-[0.2em] uppercase text-cream/40 hover:text-gold transition-colors duration-500"
+            className="inline-flex items-center gap-3 font-[family-name:var(--font-inter)] text-[12px] tracking-[0.2em] uppercase text-cream/55 hover:text-gold transition-colors duration-500"
           >
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-5 h-5">
               <rect x="2" y="2" width="20" height="20" rx="5" />
@@ -156,16 +192,17 @@ export default function Gallery() {
                 src={galleryImages[selectedImage].src}
                 alt={galleryImages[selectedImage].alt}
                 fill
-                className="object-contain"
+                className="object-contain image-sharp"
                 sizes="90vw"
+                quality={90}
               />
-              <p className="absolute -bottom-10 left-1/2 -translate-x-1/2 font-[family-name:var(--font-cormorant)] text-lg text-cream/60 whitespace-nowrap">
+              <p className="absolute -bottom-10 left-1/2 -translate-x-1/2 font-[family-name:var(--font-cormorant)] text-lg text-cream/70 whitespace-nowrap">
                 {galleryImages[selectedImage].caption}
               </p>
               {/* Close */}
               <button
                 onClick={() => setSelectedImage(null)}
-                className="absolute -top-12 right-0 text-cream/50 hover:text-cream transition-colors"
+                className="absolute -top-12 right-0 text-cream/60 hover:text-cream transition-colors"
               >
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-8 h-8">
                   <line x1="18" y1="6" x2="6" y2="18" />
@@ -176,7 +213,7 @@ export default function Gallery() {
               {selectedImage > 0 && (
                 <button
                   onClick={(e) => { e.stopPropagation(); setSelectedImage(selectedImage - 1); }}
-                  className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 text-cream/30 hover:text-cream transition-colors"
+                  className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 text-cream/40 hover:text-cream transition-colors"
                 >
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-8 h-8">
                     <polyline points="15 18 9 12 15 6" />
@@ -186,7 +223,7 @@ export default function Gallery() {
               {selectedImage < galleryImages.length - 1 && (
                 <button
                   onClick={(e) => { e.stopPropagation(); setSelectedImage(selectedImage + 1); }}
-                  className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 text-cream/30 hover:text-cream transition-colors"
+                  className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 text-cream/40 hover:text-cream transition-colors"
                 >
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-8 h-8">
                     <polyline points="9 18 15 12 9 6" />
