@@ -4,7 +4,7 @@ import Philosophy from "@/components/philosophy";
 
 export const metadata: Metadata = {
   title: "Philosophie | Weingut Rainer Bauer",
-  description: "Naturnaher Weinbau, Handarbeit im Weinberg und traditionelle Kellerwirtschaft — die Philosophie hinter unseren Weinen.",
+  description: "Naturnaher Weinbau, Handarbeit im Weinberg und traditionelle Kellerwirtschaft - die Philosophie hinter unseren Weinen.",
 };
 
 export default function PhilosophiePage() {
@@ -13,9 +13,9 @@ export default function PhilosophiePage() {
       <PageHeader
         title="Handwerk &"
         titleAccent="Leidenschaft"
-        subtitle="Unsere Philosophie"
-        backgroundImage="/images/keller-barrique.jpg"
-        backgroundAlt="Barriquefässer im historischen Gewölbekeller"
+        subtitle="Philosophie"
+        backgroundImage="/images/rotwein-einschenken.jpg"
+        backgroundAlt="Rotwein wird sorgfaeltig ins Glas eingeschenkt"
       />
       <Philosophy />
     </>

@@ -4,7 +4,7 @@ import Experience from "@/components/experience";
 
 export const metadata: Metadata = {
   title: "Erlebnis | Weingut Rainer Bauer",
-  description: "Verkauf ab Hof, Weinproben und Veranstaltungen — besuchen Sie unser Weingut in Talheim an der Württemberger Weinstraße.",
+  description: "Verkauf ab Hof, Weinproben und Veranstaltungen - besuchen Sie unser Weingut in Talheim an der Wuerttemberger Weinstrasse.",
 };
 
 export default function ErlebnisPage() {

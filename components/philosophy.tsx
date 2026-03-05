@@ -4,29 +4,30 @@ import React from "react";
 import Image from "next/image";
 import { ScrollReveal, LuxuryReveal } from "./scroll-reveal";
 
+
 const principles = [
   {
     title: "Naturnaher Weinbau",
     description:
-      "Sorgfältige, naturnahe Pflege der Reben — im Einklang mit dem Rhythmus der Jahreszeiten und dem Respekt vor dem Terroir.",
+      "Sorgfaeltige, naturnahe Pflege der Reben - im Einklang mit dem Rhythmus der Jahreszeiten und dem Respekt vor dem Terroir.",
     icon: "leaf",
   },
   {
     title: "Handarbeit im Weinberg",
     description:
-      "Jede Rebe wird mit Sorgfalt und Hingabe betreut. Qualität beginnt im Weinberg, nicht im Keller.",
+      "Jede Rebe wird mit Sorgfalt und Hingabe betreut. Qualitaet beginnt im Weinberg, nicht im Keller.",
     icon: "hand",
   },
   {
     title: "Traditionelle Kellerwirtschaft",
     description:
-      "Reifung in Edelstahltanks und Barriquefässern — für sortentypische Weine mit Charakter und Tiefe.",
+      "Reifung in Edelstahltanks und Barriquefaessern - fuer sortentypische Weine mit Charakter und Tiefe.",
     icon: "barrel",
   },
   {
     title: "Familientradition",
     description:
-      "Seit über 35 Jahren führen wir unser Weingut als Familienbetrieb mit Leidenschaft und Hingabe.",
+      "Seit ueber 35 Jahren fuehren wir unser Weingut als Familienbetrieb mit Leidenschaft und Hingabe.",
     icon: "family",
   },
 ];
@@ -70,31 +71,30 @@ function PrincipleIcon({ icon }: { icon: string }) {
 export default function Philosophy() {
   return (
     <section className="relative overflow-hidden">
-      {/* Full-width image banner with Martin at the tanks */}
+      {/* Full-width image banner with quote */}
       <div className="relative h-[50vh] min-h-[400px]">
         <Image
           src="/images/keller-barrique.jpg"
-          alt="Barriquefässer im historischen Gewölbekeller"
+          alt="Barriquefaesser im historischen Gewoelbekeller"
           fill
-          className="object-cover image-sharp"
+          className="object-cover object-center image-sharp"
           sizes="100vw"
-
+          loading="lazy"
         />
+        {/* Dark overlay for text readability */}
         <div
           className="absolute inset-0"
           style={{
-            background: `
-              linear-gradient(180deg, rgba(12, 10, 9, 0.4) 0%, rgba(12, 10, 9, 0.2) 40%, rgba(12, 10, 9, 0.8) 100%)
-            `,
+            background:
+              "linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.35) 40%, rgba(0,0,0,0.65) 100%)",
           }}
         />
-        {/* Centered quote over image */}
         <div className="absolute inset-0 flex items-center justify-center px-6">
           <blockquote className="max-w-3xl text-center">
-            <span className="font-[family-name:var(--font-playfair)] text-6xl md:text-7xl text-gold/25">&bdquo;</span>
-            <p className="font-[family-name:var(--font-cormorant)] text-xl md:text-2xl lg:text-3xl text-cream italic leading-relaxed -mt-6 text-shadow-luxury">
+            <span className="font-[family-name:var(--font-playfair)] text-5xl sm:text-6xl md:text-7xl text-gold/30">&bdquo;</span>
+            <p className="font-[family-name:var(--font-cormorant)] text-lg sm:text-xl md:text-2xl lg:text-3xl text-white italic leading-relaxed -mt-6 text-shadow-luxury">
               Die Weine vom Weingut Rainer Bauer sind edle, sortentypische und
-              genussreiche Charaktere — entstanden aus sorgfältiger, naturnaher
+              genussreiche Charaktere - entstanden aus sorgfaeltiger, naturnaher
               Pflege der Reben und naturorientierter Verarbeitung der Trauben.
             </p>
           </blockquote>
@@ -104,30 +104,32 @@ export default function Philosophy() {
       {/* Content section */}
       <div className="section-padding bg-gradient-warm">
         <div className="max-w-7xl mx-auto">
-          {/* Section Header */}
-          <LuxuryReveal className="text-center mb-20 md:mb-28">
+          <LuxuryReveal className="text-center mb-16 md:mb-24">
             <p className="font-[family-name:var(--font-inter)] text-[11px] tracking-[0.4em] uppercase text-gold/80 mb-6">
-              Unsere Philosophie
+              Unsere Werte
             </p>
-            <h2 className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl lg:text-6xl text-cream tracking-wide">
+            <h2 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-cream tracking-wide">
               Handwerk &{" "}
               <span className="italic text-gold/90">Leidenschaft</span>
             </h2>
+            <p className="font-[family-name:var(--font-cormorant)] text-lg sm:text-xl text-cream/65 max-w-2xl mx-auto mt-6">
+              Vier Grundsaetze leiten uns bei allem, was wir tun - im Weinberg wie im Keller.
+            </p>
             <div className="gold-line mx-auto mt-8" />
           </LuxuryReveal>
 
           {/* Principles Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {principles.map((principle, index) => (
               <ScrollReveal key={principle.title} delay={index * 0.12}>
-                <div className="group text-center p-8 md:p-10 border border-gold/8 hover:border-gold/25 transition-all duration-700 bg-warmblack/20 hover:bg-warmblack/40 luxury-card">
+                <div className="group text-center p-8 md:p-10 border border-gold/8 hover:border-gold/25 transition-all duration-700 bg-warmblack/20 hover:bg-warmblack/40 luxury-card h-full">
                   <div className="flex justify-center mb-6">
                     <PrincipleIcon icon={principle.icon} />
                   </div>
                   <h3 className="font-[family-name:var(--font-playfair)] text-lg md:text-xl text-cream mb-4 tracking-wide">
                     {principle.title}
                   </h3>
-                  <p className="font-[family-name:var(--font-cormorant)] text-base text-cream/60 leading-relaxed">
+                  <p className="font-[family-name:var(--font-cormorant)] text-base text-cream/65 leading-relaxed">
                     {principle.description}
                   </p>
                   <div className="w-0 h-px bg-gold/30 mx-auto mt-6 transition-all duration-700 group-hover:w-12" />

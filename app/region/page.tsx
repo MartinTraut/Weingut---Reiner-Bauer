@@ -4,18 +4,18 @@ import Vineyard from "@/components/vineyard";
 
 export const metadata: Metadata = {
   title: "Region & Terroir | Weingut Rainer Bauer",
-  description: "Talheim am Neckar, direkt an der Württemberger Weinstraße. Erfahren Sie mehr über unsere Weinlagen, Böden und das Terroir.",
+  description: "Talheim am Neckar, direkt an der Wuerttemberger Weinstrasse. Erfahren Sie mehr ueber unsere Weinlagen, Boeden und das Terroir.",
 };
 
 export default function RegionPage() {
   return (
     <>
       <PageHeader
-        title="Württemberg —"
+        title="Wuerttemberg -"
         titleAccent="unser Terroir"
-        subtitle="Unsere Region"
+        subtitle="Region"
         backgroundImage="/images/weinberg-panorama.jpg"
-        backgroundAlt="Herbstliches Weinberg-Panorama in Württemberg"
+        backgroundAlt="Herbstliches Weinberg-Panorama in Wuerttemberg"
       />
       <Vineyard />
     </>

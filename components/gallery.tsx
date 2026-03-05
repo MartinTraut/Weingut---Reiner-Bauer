@@ -8,8 +8,8 @@ import { ScrollReveal, StaggerContainer, StaggerItem, LuxuryReveal } from "./scr
 const galleryImages = [
   {
     src: "/images/keller-barrique.jpg",
-    alt: "Barriquefässer im historischen Gewölbekeller",
-    caption: "Im Gewölbekeller",
+    alt: "Barriquefaesser im historischen Gewoelbekeller",
+    caption: "Im Gewoelbekeller",
     span: "col-span-2 md:col-span-2",
     aspect: "aspect-[16/9]",
   },
@@ -22,14 +22,14 @@ const galleryImages = [
   },
   {
     src: "/images/trauben-weiss-nah.jpg",
-    alt: "Weiße Trauben an der alten Rebe im Morgenlicht",
-    caption: "Weißweintrauben",
+    alt: "Weisse Trauben an der alten Rebe im Morgenlicht",
+    caption: "Weissweintrauben",
     span: "",
     aspect: "aspect-square",
   },
   {
     src: "/images/rotwein-bordeaux.jpg",
-    alt: "Edle Rotweinflaschen mit Weingläsern",
+    alt: "Edle Rotweinflaschen mit Weinglaesern",
     caption: "Edle Tropfen",
     span: "",
     aspect: "aspect-square",
@@ -43,14 +43,14 @@ const galleryImages = [
   },
   {
     src: "/images/weinglaeser-sonnenuntergang.jpg",
-    alt: "Verschiedene Weine im Glas bei Sonnenuntergang über den Weinbergen",
+    alt: "Verschiedene Weine im Glas bei Sonnenuntergang",
     caption: "Weinverkostung",
     span: "",
     aspect: "aspect-square",
   },
   {
     src: "/images/trauben-gruen.jpg",
-    alt: "Grüne Trauben hängen am Rebstock mit Blick auf die Weinberge",
+    alt: "Gruene Trauben am Rebstock mit Blick auf die Weinberge",
     caption: "Im Weinberg",
     span: "",
     aspect: "aspect-square",
@@ -64,7 +64,7 @@ const galleryImages = [
   },
   {
     src: "/images/weingut-terrasse.jpg",
-    alt: "Genuss auf der Terrasse — Wein, Trauben und Abendstimmung",
+    alt: "Genuss auf der Terrasse - Wein, Trauben und Abendstimmung",
     caption: "Weingut-Terrasse",
     span: "",
     aspect: "aspect-square",
@@ -107,15 +107,17 @@ export default function Gallery() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] max-w-3xl h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
 
       <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
-        <LuxuryReveal className="text-center mb-16 md:mb-24">
+        <LuxuryReveal className="text-center mb-12 md:mb-20">
           <p className="font-[family-name:var(--font-inter)] text-[11px] tracking-[0.4em] uppercase text-gold/80 mb-6">
             Impressionen
           </p>
-          <h2 className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl lg:text-6xl text-cream tracking-wide">
+          <h2 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-cream tracking-wide">
             Momente aus dem{" "}
             <span className="italic text-gold/90">Weingut</span>
           </h2>
+          <p className="font-[family-name:var(--font-cormorant)] text-lg sm:text-xl text-cream/65 max-w-2xl mx-auto mt-6">
+            Einblicke in unseren Alltag zwischen Weinberg, Keller und Genuss.
+          </p>
           <div className="gold-line mx-auto mt-8" />
         </LuxuryReveal>
 
@@ -131,20 +133,16 @@ export default function Gallery() {
                   src={image.src}
                   alt={image.alt}
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-700 image-sharp"
+                  className="object-cover object-center group-hover:scale-105 transition-transform duration-700 image-sharp"
                   sizes={image.span ? "(max-width: 768px) 100vw, 50vw" : "(max-width: 768px) 50vw, 25vw"}
-
                   loading="lazy"
                 />
-                {/* Hover overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-warmblack/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                {/* Caption */}
                 <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-500">
                   <p className="font-[family-name:var(--font-playfair)] text-sm md:text-base text-cream">
                     {image.caption}
                   </p>
                 </div>
-                {/* Border on hover */}
                 <div className="absolute inset-2 border border-gold/0 group-hover:border-gold/20 transition-all duration-700 pointer-events-none" />
               </button>
             </StaggerItem>
@@ -199,7 +197,6 @@ export default function Gallery() {
               <p className="absolute -bottom-10 left-1/2 -translate-x-1/2 font-[family-name:var(--font-cormorant)] text-lg text-cream/70 whitespace-nowrap">
                 {galleryImages[selectedImage].caption}
               </p>
-              {/* Close */}
               <button
                 onClick={() => setSelectedImage(null)}
                 className="absolute -top-12 right-0 text-cream/60 hover:text-cream transition-colors"
@@ -209,13 +206,12 @@ export default function Gallery() {
                   <line x1="6" y1="6" x2="18" y2="18" />
                 </svg>
               </button>
-              {/* Nav */}
               {selectedImage > 0 && (
                 <button
                   onClick={(e) => { e.stopPropagation(); setSelectedImage(selectedImage - 1); }}
-                  className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 text-cream/40 hover:text-cream transition-colors"
+                  className="absolute left-2 sm:left-0 sm:-translate-x-14 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-gold/30 bg-warmblack/80 backdrop-blur-sm flex items-center justify-center text-gold hover:bg-gold/10 hover:border-gold/60 transition-all duration-300"
                 >
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-8 h-8">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-5 h-5">
                     <polyline points="15 18 9 12 15 6" />
                   </svg>
                 </button>
@@ -223,9 +219,9 @@ export default function Gallery() {
               {selectedImage < galleryImages.length - 1 && (
                 <button
                   onClick={(e) => { e.stopPropagation(); setSelectedImage(selectedImage + 1); }}
-                  className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 text-cream/40 hover:text-cream transition-colors"
+                  className="absolute right-2 sm:right-0 sm:translate-x-14 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-gold/30 bg-warmblack/80 backdrop-blur-sm flex items-center justify-center text-gold hover:bg-gold/10 hover:border-gold/60 transition-all duration-300"
                 >
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-8 h-8">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-5 h-5">
                     <polyline points="9 18 15 12 9 6" />
                   </svg>
                 </button>

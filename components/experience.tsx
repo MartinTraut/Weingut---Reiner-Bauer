@@ -3,31 +3,30 @@
 import Link from "next/link";
 import { ScrollReveal, LuxuryReveal } from "./scroll-reveal";
 
+
 export default function Experience() {
   return (
     <section className="relative section-padding bg-gradient-wine overflow-hidden">
-      {/* Decorative */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] max-w-3xl h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
 
       <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
-        <LuxuryReveal className="text-center mb-20 md:mb-28">
+        <LuxuryReveal className="text-center mb-16 md:mb-24">
           <p className="font-[family-name:var(--font-inter)] text-[11px] tracking-[0.4em] uppercase text-gold/80 mb-6">
-            Besuchen Sie uns
+            Vor Ort erleben
           </p>
-          <h2 className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl lg:text-6xl text-cream tracking-wide">
+          <h2 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-cream tracking-wide">
             Das{" "}
             <span className="italic text-gold/90">Erlebnis</span>
           </h2>
           <p className="font-[family-name:var(--font-cormorant)] text-lg md:text-xl text-cream/65 max-w-2xl mx-auto mt-6">
-            Erleben Sie unser Weingut persönlich — verkosten Sie unsere Weine
-            direkt an der Württemberger Weinstraße.
+            Erleben Sie unser Weingut persoenlich - verkosten Sie unsere Weine
+            direkt an der Wuerttemberger Weinstrasse.
           </p>
           <div className="gold-line mx-auto mt-8" />
         </LuxuryReveal>
 
         {/* Content Grid */}
-        <div className="grid lg:grid-cols-3 gap-8 md:gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
           {/* Verkauf ab Hof */}
           <ScrollReveal delay={0}>
             <div className="group h-full p-8 md:p-10 border border-gold/10 hover:border-gold/25 transition-all duration-700 bg-warmblack/30 flex flex-col luxury-card">
@@ -42,24 +41,24 @@ export default function Experience() {
               </h3>
               <p className="font-[family-name:var(--font-cormorant)] text-lg text-cream/65 leading-relaxed mb-8 flex-1">
                 Besuchen Sie unser Weingut in Talheim und entdecken Sie unsere
-                Weine vor Ort. Wir beraten Sie gerne persönlich und finden den
-                perfekten Wein für jeden Anlass.
+                Weine vor Ort. Wir beraten Sie gerne persoenlich und finden den
+                perfekten Wein fuer jeden Anlass.
               </p>
               <div className="border-t border-gold/10 pt-6 space-y-3">
                 <div className="flex justify-between">
-                  <span className="font-[family-name:var(--font-inter)] text-[12px] text-cream/50">
-                    Mo – Fr
+                  <span className="font-[family-name:var(--font-inter)] text-[12px] text-cream/55">
+                    Mo - Fr
                   </span>
                   <span className="font-[family-name:var(--font-cormorant)] text-base text-cream/80">
-                    18:00 – 20:00 Uhr
+                    18:00 - 20:00 Uhr
                   </span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="font-[family-name:var(--font-inter)] text-[12px] text-cream/50">
+                  <span className="font-[family-name:var(--font-inter)] text-[12px] text-cream/55">
                     Samstag
                   </span>
                   <span className="font-[family-name:var(--font-cormorant)] text-base text-cream/80">
-                    09:30 – 16:00 Uhr
+                    09:30 - 16:00 Uhr
                   </span>
                 </div>
               </div>
@@ -78,19 +77,19 @@ export default function Experience() {
                 Weinprobe
               </h3>
               <p className="font-[family-name:var(--font-cormorant)] text-lg text-cream/65 leading-relaxed mb-8 flex-1">
-                Erleben Sie eine geführte Verkostung unserer Weine. Erfahren
+                Erleben Sie eine gefuehrte Verkostung unserer Weine. Erfahren
                 Sie die Geschichten hinter jedem Tropfen und entdecken Sie Ihre
-                persönlichen Favoriten.
+                persoenlichen Favoriten.
               </p>
               <div className="border-t border-gold/10 pt-6">
-                <p className="font-[family-name:var(--font-inter)] text-[11px] tracking-[0.15em] text-cream/50">
-                  Auf Anfrage für Gruppen möglich
+                <p className="font-[family-name:var(--font-inter)] text-[11px] tracking-[0.15em] text-cream/55">
+                  Auf Anfrage fuer Gruppen moeglich
                 </p>
                 <a
                   href="mailto:[email protected]"
                   className="inline-block mt-4 font-[family-name:var(--font-inter)] text-[12px] tracking-[0.2em] uppercase text-gold border-b border-gold/30 pb-1 hover:border-gold/60 transition-all duration-500"
                 >
-                  Anfragen
+                  Weinprobe buchen
                 </a>
               </div>
             </div>
@@ -99,7 +98,6 @@ export default function Experience() {
           {/* Events */}
           <ScrollReveal delay={0.3}>
             <div className="group h-full p-8 md:p-10 border border-gold/15 hover:border-gold/30 transition-all duration-700 bg-wine-dark/10 flex flex-col relative overflow-hidden luxury-card">
-              {/* Highlight badge */}
               <div className="absolute top-0 right-0">
                 <div className="bg-gold/90 text-warmblack px-4 py-1.5">
                   <span className="font-[family-name:var(--font-inter)] text-[9px] tracking-[0.2em] uppercase font-medium">
@@ -116,24 +114,24 @@ export default function Experience() {
                 </svg>
               </div>
               <h3 className="font-[family-name:var(--font-playfair)] text-xl md:text-2xl text-cream mb-2 tracking-wide">
-                KellerKücheKlang
+                KellerKuecheKlang
               </h3>
               <p className="font-[family-name:var(--font-inter)] text-[11px] tracking-[0.15em] text-gold/70 mb-4">
-                6. & 7. März 2026
+                6. & 7. Maerz 2026
               </p>
               <p className="font-[family-name:var(--font-cormorant)] text-lg text-cream/65 leading-relaxed mb-8 flex-1">
-                Kitchen Party im Restaurant &bdquo;Wo der Hahn kräht&ldquo; in
-                Flein. Wandeln Sie durch Küche und Weinkeller, genießen Sie unsere
-                Weine, erlesene Häppchen und harmonische Wein-Speise-Kombinationen
+                Kitchen Party im Restaurant &bdquo;Wo der Hahn kraeht&ldquo; in
+                Flein. Wandeln Sie durch Kueche und Weinkeller, geniessen Sie unsere
+                Weine, erlesene Haeppchen und harmonische Wein-Speise-Kombinationen
                 bei Live-Musik der &bdquo;Drive Combo&ldquo;.
               </p>
               <div className="border-t border-gold/10 pt-6">
-                <p className="font-[family-name:var(--font-inter)] text-[11px] tracking-[0.15em] text-cream/50 mb-3">
+                <p className="font-[family-name:var(--font-inter)] text-[11px] tracking-[0.15em] text-cream/55 mb-3">
                   Tickets per E-Mail
                 </p>
                 <a
-                  href="mailto:[email protected]?subject=KellerKücheKlang Tickets"
-                  className="inline-block font-[family-name:var(--font-inter)] text-[12px] tracking-[0.2em] uppercase text-warmblack bg-gold hover:bg-gold-light px-8 py-3 transition-all duration-500 hover:shadow-[0_0_30px_rgba(197,164,126,0.2)]"
+                  href="mailto:[email protected]?subject=KellerKuecheKlang Tickets"
+                  className="inline-block font-[family-name:var(--font-inter)] text-[12px] tracking-[0.2em] uppercase text-warmblack bg-gold hover:bg-gold-light px-8 py-3 transition-all duration-500 hover:shadow-[0_0_30px_rgba(201,168,76,0.2)]"
                 >
                   Tickets anfragen
                 </a>
@@ -142,8 +140,8 @@ export default function Experience() {
           </ScrollReveal>
         </div>
 
-        {/* Württemberger Weinstraße Note */}
-        <ScrollReveal className="mt-20 text-center">
+        {/* Wuerttemberger Weinstrasse Note */}
+        <ScrollReveal className="mt-16 text-center">
           <div className="inline-flex items-center gap-4 border border-gold/10 px-8 py-4 bg-warmblack/20">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-5 h-5 text-gold/50 shrink-0">
               <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
@@ -152,7 +150,7 @@ export default function Experience() {
             <p className="font-[family-name:var(--font-cormorant)] text-lg text-cream/65">
               Direkt an der{" "}
               <span className="text-gold/80 italic">
-                Württemberger Weinstraße
+                Wuerttemberger Weinstrasse
               </span>
             </p>
           </div>

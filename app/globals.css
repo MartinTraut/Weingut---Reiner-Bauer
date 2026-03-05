@@ -2,8 +2,7 @@
 @import "tw-animate-css";
 
 /* ═══════════════════════════════════════════════════════════════
-   WEINGUT RAINER BAUER — Luxury Design System
-   Premium Winery Website · 2026
+   WEINGUT RAINER BAUER — Premium Design System
    ═══════════════════════════════════════════════════════════════ */
 
 @theme inline {
@@ -44,32 +43,34 @@
 
 :root {
   /* ── Brand Palette ── */
-  --wine: #722F37;
+  --wine: #6B1A2A;
   --wine-light: #8B3A44;
   --wine-dark: #4A1C23;
-  --gold: #C5A47E;
-  --gold-light: #D4BA9A;
-  --gold-dark: #A68B63;
-  --cream: #F5F0E8;
+  --gold: #C9A84C;
+  --gold-light: #D4BA6A;
+  --gold-dark: #A68B3E;
+  --cream: #FAF7F2;
   --cream-dark: #E8E0D4;
-  --warmblack: #0C0A09;
-  --warmgray: #1C1917;
+  --warmblack: #1A1A1A;
+  --warmgray: #2A2A2A;
+  --bordeaux: #5A2028;
+  --bordeaux-dark: #3D1419;
 
   /* ── Semantic Tokens ── */
-  --background: #0C0A09;
-  --foreground: #F5F0E8;
-  --primary: #722F37;
-  --primary-foreground: #F5F0E8;
-  --secondary: #1C1917;
-  --secondary-foreground: #F5F0E8;
-  --muted: #1C1917;
-  --muted-foreground: #A8A29E;
-  --accent: #C5A47E;
-  --accent-foreground: #0C0A09;
-  --card: #171412;
-  --card-foreground: #F5F0E8;
-  --border: rgba(197, 164, 126, 0.15);
-  --ring: #C5A47E;
+  --background: #1A1A1A;
+  --foreground: #FAF7F2;
+  --primary: #6B1A2A;
+  --primary-foreground: #FAF7F2;
+  --secondary: #2A2A2A;
+  --secondary-foreground: #FAF7F2;
+  --muted: #2A2A2A;
+  --muted-foreground: #B0ACA6;
+  --accent: #C9A84C;
+  --accent-foreground: #1A1A1A;
+  --card: #222222;
+  --card-foreground: #FAF7F2;
+  --border: rgba(201, 168, 76, 0.15);
+  --ring: #C9A84C;
 
   --radius: 0.25rem;
 }
@@ -96,11 +97,13 @@
     @apply bg-background text-foreground;
     font-family: var(--font-body), 'Cormorant Garamond', Georgia, serif;
     overflow-x: hidden;
+    font-size: 1rem;
+    line-height: 1.6;
   }
 
   ::selection {
-    background: rgba(114, 47, 55, 0.4);
-    color: #F5F0E8;
+    background: rgba(107, 26, 42, 0.4);
+    color: #FAF7F2;
   }
 
   /* Scrollbar Styling */
@@ -108,14 +111,14 @@
     width: 6px;
   }
   ::-webkit-scrollbar-track {
-    background: #0C0A09;
+    background: #1A1A1A;
   }
   ::-webkit-scrollbar-thumb {
-    background: rgba(197, 164, 126, 0.3);
+    background: rgba(201, 168, 76, 0.3);
     border-radius: 3px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: rgba(197, 164, 126, 0.5);
+    background: rgba(201, 168, 76, 0.5);
   }
 }
 
@@ -124,16 +127,40 @@
    ═══════════════════════════════════════════════════════════════ */
 
 @layer base {
-  h1, h2, h3, h4, h5 {
+  h1 {
+    font-family: var(--font-display), 'Playfair Display', Georgia, serif;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    line-height: 1.1;
+    font-size: clamp(2.5rem, 5vw, 5rem);
+  }
+
+  h2 {
     font-family: var(--font-display), 'Playfair Display', Georgia, serif;
     font-weight: 400;
     letter-spacing: 0.02em;
     line-height: 1.15;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+  }
+
+  h3 {
+    font-family: var(--font-display), 'Playfair Display', Georgia, serif;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  }
+
+  h4, h5 {
+    font-family: var(--font-display), 'Playfair Display', Georgia, serif;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    line-height: 1.3;
   }
 
   p {
     font-family: var(--font-body), 'Cormorant Garamond', Georgia, serif;
-    line-height: 1.8;
+    line-height: 1.7;
     font-size: 1.125rem;
   }
 }
@@ -144,7 +171,7 @@
 
 @layer utilities {
   .text-gradient-gold {
-    background: linear-gradient(135deg, #C5A47E 0%, #D4BA9A 50%, #C5A47E 100%);
+    background: linear-gradient(135deg, #C9A84C 0%, #D4BA6A 50%, #C9A84C 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -154,38 +181,37 @@
     text-wrap: balance;
   }
 
-  /* Luxury text shadow for headings over images */
   .text-shadow-luxury {
     text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5), 0 4px 40px rgba(0, 0, 0, 0.3);
   }
 
   .border-gradient-gold {
-    border-image: linear-gradient(135deg, rgba(197, 164, 126, 0.3), rgba(197, 164, 126, 0.1)) 1;
+    border-image: linear-gradient(135deg, rgba(201, 168, 76, 0.3), rgba(201, 168, 76, 0.1)) 1;
   }
 
   .bg-gradient-dark {
-    background: linear-gradient(180deg, #0C0A09 0%, #171412 100%);
+    background: linear-gradient(180deg, #1A1A1A 0%, #222222 100%);
   }
 
   .bg-gradient-wine {
-    background: linear-gradient(180deg, #0C0A09 0%, rgba(114, 47, 55, 0.15) 50%, #0C0A09 100%);
+    background: linear-gradient(180deg, #1A1A1A 0%, rgba(107, 26, 42, 0.12) 50%, #1A1A1A 100%);
   }
 
   .bg-gradient-warm {
-    background: linear-gradient(180deg, #171412 0%, #1C1917 50%, #171412 100%);
+    background: linear-gradient(180deg, #222222 0%, #2A2A2A 50%, #222222 100%);
   }
 
   /* Gold separator line */
   .gold-line {
     width: 60px;
     height: 1px;
-    background: linear-gradient(90deg, transparent, #C5A47E, transparent);
+    background: linear-gradient(90deg, transparent, #C9A84C, transparent);
   }
 
   .gold-line-wide {
     width: 120px;
     height: 1px;
-    background: linear-gradient(90deg, transparent, #C5A47E, transparent);
+    background: linear-gradient(90deg, transparent, #C9A84C, transparent);
   }
 
   /* Luxury image overlay */
@@ -193,30 +219,31 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(12, 10, 9, 0.3) 0%, rgba(12, 10, 9, 0.7) 100%);
+    background: linear-gradient(180deg, rgba(26, 26, 26, 0.3) 0%, rgba(26, 26, 26, 0.7) 100%);
     pointer-events: none;
   }
 
   /* Image sharpness */
   .image-sharp {
     image-rendering: -webkit-optimize-contrast;
-    filter: contrast(1.03) saturate(1.05);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
   }
 
-  /* Section padding */
+  /* Section padding — unified: min 80px vertical, 5% horizontal */
   .section-padding {
-    padding: 7rem 1.5rem;
+    padding: 80px 5%;
   }
 
   @media (min-width: 768px) {
     .section-padding {
-      padding: 10rem 2rem;
+      padding: 100px 5%;
     }
   }
 
   @media (min-width: 1024px) {
     .section-padding {
-      padding: 12rem 4rem;
+      padding: 120px 5%;
     }
   }
 
@@ -225,7 +252,7 @@
     content: '';
     position: fixed;
     inset: 0;
-    opacity: 0.03;
+    opacity: 0.025;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
     pointer-events: none;
     z-index: 9999;
@@ -236,8 +263,53 @@
     transition: all 0.7s cubic-bezier(0.25, 0.4, 0.25, 1);
   }
   .luxury-card:hover {
-    box-shadow: 0 0 40px rgba(197, 164, 126, 0.06), 0 0 80px rgba(197, 164, 126, 0.03);
+    box-shadow: 0 0 40px rgba(201, 168, 76, 0.06), 0 0 80px rgba(201, 168, 76, 0.03);
     transform: translateY(-2px);
+  }
+
+  /* Wine card with bordeaux glow on hover */
+  .wine-card-hover {
+    transition: all 0.6s cubic-bezier(0.25, 0.4, 0.25, 1);
+  }
+  .wine-card-hover:hover {
+    box-shadow: 0 8px 40px rgba(90, 32, 40, 0.25), 0 0 60px rgba(201, 168, 76, 0.08);
+    transform: translateY(-4px);
+    border-color: rgba(201, 168, 76, 0.4);
+  }
+
+  /* Bordeaux gradient background */
+  .bg-gradient-bordeaux {
+    background: linear-gradient(135deg, #3D1419 0%, #5A2028 50%, #3D1419 100%);
+  }
+
+  /* Vertical decorative text */
+  .text-vertical {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+  }
+
+  /* Carousel track for smooth horizontal scroll */
+  .carousel-track {
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .carousel-track::-webkit-scrollbar {
+    display: none;
+  }
+  .carousel-track > * {
+    scroll-snap-align: center;
+  }
+
+  /* Tab active underline animation helper */
+  .tab-active-underline {
+    position: relative;
+  }
+
+  /* Dark overlay for text on images — WCAG AA compliant */
+  .overlay-dark {
+    background: rgba(0, 0, 0, 0.45);
   }
 }
 
@@ -288,19 +360,6 @@
   100% { background-position: 200% center; }
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-/* Scroll indicator bounce */
-@keyframes scrollBounce {
-  0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
-  40% { transform: translateY(-8px) translateX(-50%); }
-  60% { transform: translateY(-4px) translateX(-50%); }
-}
-
-/* Luxury gold line reveal */
 @keyframes goldLineReveal {
   from {
     width: 0;
@@ -312,8 +371,7 @@
   }
 }
 
-/* Subtle pulse glow for CTAs */
 @keyframes pulseGlow {
-  0%, 100% { box-shadow: 0 0 0 rgba(197, 164, 126, 0); }
-  50% { box-shadow: 0 0 20px rgba(197, 164, 126, 0.15); }
+  0%, 100% { box-shadow: 0 0 0 rgba(201, 168, 76, 0); }
+  50% { box-shadow: 0 0 20px rgba(201, 168, 76, 0.15); }
 }

@@ -5,22 +5,23 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
+
 const heroSlides = [
   {
     src: "/images/weinberg-sonnenuntergang.jpg",
-    alt: "Weinberge im goldenen Sonnenuntergang — Weingut Rainer Bauer",
+    alt: "Weinberge im goldenen Sonnenuntergang bei Talheim",
   },
   {
     src: "/images/keller-barrique.jpg",
-    alt: "Barriquefässer im historischen Gewölbekeller",
-  },
-  {
-    src: "/images/weinglaeser-sonnenuntergang.jpg",
-    alt: "Weinverkostung mit Blick auf die Weinberge bei Sonnenuntergang",
+    alt: "Barriquefaesser im historischen Gewoelbekeller",
   },
   {
     src: "/images/weingut-terrasse.jpg",
-    alt: "Genuss auf der Weingut-Terrasse mit erlesenen Weinen und Trauben",
+    alt: "Genuss auf der Weingut-Terrasse mit erlesenen Weinen",
+  },
+  {
+    src: "/images/trauben-rot-nah.jpg",
+    alt: "Reife Rotweintrauben am Rebstock in Wuerttemberg",
   },
 ];
 
@@ -32,168 +33,153 @@ export default function Hero() {
   }, []);
 
   useEffect(() => {
-    const timer = setInterval(nextSlide, 6000);
+    const timer = setInterval(nextSlide, 5000);
     return () => clearInterval(timer);
   }, [nextSlide]);
 
   return (
-    <section className="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden">
-      {/* Background Image Slideshow */}
-      <AnimatePresence mode="sync">
+    <section className="relative min-h-[100svh] flex items-stretch overflow-hidden bg-warmblack">
+      {/* ── LEFT: Text Content ── */}
+      <div className="relative z-10 flex flex-col justify-center w-full lg:w-1/2 px-8 sm:px-12 md:px-16 lg:px-20 xl:px-28 py-32 lg:py-20">
+        {/* Vertical Deko */}
         <motion.div
-          key={currentSlide}
-          initial={{ opacity: 0, scale: 1.1 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 1.5, ease: "easeInOut" }}
-          className="absolute inset-0"
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1.2, delay: 1.8 }}
+          className="absolute left-4 lg:left-8 top-1/2 -translate-y-1/2 hidden md:block"
         >
-          <Image
-            src={heroSlides[currentSlide].src}
-            alt={heroSlides[currentSlide].alt}
-            fill
-            priority
-            className="object-cover image-sharp"
-            sizes="100vw"
-
-          />
-        </motion.div>
-      </AnimatePresence>
-
-      {/* Dark overlay for text readability */}
-      <div
-        className="absolute inset-0 z-[1]"
-        style={{
-          background: `
-            linear-gradient(180deg, rgba(12, 10, 9, 0.6) 0%, rgba(12, 10, 9, 0.35) 40%, rgba(12, 10, 9, 0.5) 70%, rgba(12, 10, 9, 0.85) 100%),
-            radial-gradient(ellipse 60% 50% at 50% 50%, transparent 0%, rgba(12, 10, 9, 0.3) 100%)
-          `,
-        }}
-      />
-
-      {/* Decorative lines */}
-      <motion.div
-        initial={{ scaleY: 0 }}
-        animate={{ scaleY: 1 }}
-        transition={{ duration: 1.5, delay: 0.3, ease: [0.25, 0.4, 0.25, 1] }}
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-32 bg-gradient-to-b from-transparent via-gold/20 to-transparent z-[2] origin-top"
-      />
-      <motion.div
-        initial={{ scaleY: 0 }}
-        animate={{ scaleY: 1 }}
-        transition={{ duration: 1.2, delay: 1.0, ease: [0.25, 0.4, 0.25, 1] }}
-        className="absolute bottom-32 left-1/2 -translate-x-1/2 w-px h-24 bg-gradient-to-b from-gold/20 to-transparent z-[2] origin-top"
-      />
-
-      {/* Content */}
-      <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
-        {/* Logo */}
-        <motion.div
-          initial={{ opacity: 0, y: -20, scale: 0.9 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 1, delay: 0.5 }}
-          className="flex justify-center mb-8"
-        >
-          <Image
-            src="/images/logo.png"
-            alt="Weingut Rainer Bauer Logo"
-            width={100}
-            height={87}
-            className="opacity-90 invert brightness-200"
-          />
+          <span className="text-vertical font-[family-name:var(--font-inter)] text-[11px] tracking-[0.5em] uppercase text-cream/15 select-none">
+            Seit 1989
+          </span>
         </motion.div>
 
         {/* Overline */}
         <motion.p
-          initial={{ opacity: 0, y: 20, filter: "blur(4px)" }}
-          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="font-[family-name:var(--font-inter)] text-[11px] md:text-[12px] tracking-[0.4em] uppercase text-gold/80 mb-8"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="font-[family-name:var(--font-inter)] text-[10px] sm:text-[11px] md:text-[12px] tracking-[0.35em] uppercase text-gold/80 mb-6"
         >
-          Familienweingut seit 1989 &middot; Talheim, Württemberg
+          Familienweingut in Talheim, Wuerttemberg
         </motion.p>
 
         {/* Main Title */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 1.0 }}
-          className="font-[family-name:var(--font-playfair)] text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-cream tracking-[0.04em] leading-[0.95] text-shadow-luxury"
+          transition={{ duration: 1, delay: 0.6 }}
+          className="font-[family-name:var(--font-playfair)] text-4xl sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl 2xl:text-7xl text-cream tracking-[0.02em] leading-[1.05]"
         >
-          Weingut
+          Wuerttemberger Wein
           <br />
-          <span className="text-gradient-gold">Rainer Bauer</span>
+          <span className="text-gradient-gold">mit Seele.</span>
         </motion.h1>
 
         {/* Gold separator */}
         <motion.div
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
-          transition={{ duration: 1.2, delay: 1.4 }}
-          className="gold-line-wide mx-auto my-8 md:my-10"
+          transition={{ duration: 1.2, delay: 1.0 }}
+          className="gold-line-wide my-6 md:my-8 origin-left"
         />
 
         {/* Tagline */}
         <motion.p
-          initial={{ opacity: 0, filter: "blur(6px)" }}
-          animate={{ opacity: 1, filter: "blur(0px)" }}
-          transition={{ duration: 1, delay: 1.6 }}
-          className="font-[family-name:var(--font-cormorant)] text-xl md:text-2xl lg:text-3xl text-cream/70 tracking-wide italic"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 1.2 }}
+          className="font-[family-name:var(--font-cormorant)] text-lg sm:text-xl md:text-2xl text-cream/70 leading-relaxed max-w-lg"
         >
-          Tradition &middot; Handwerk &middot; Leidenschaft
+          Seit 1989 keltern wir als Familienbetrieb edle, sortentypische Weine
+          aus den besten Lagen Talheims an der Wuerttemberger Weinstrasse.
         </motion.p>
 
-        {/* CTA */}
+        {/* CTAs */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 2.0 }}
-          className="mt-12 md:mt-16 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6"
+          transition={{ duration: 0.8, delay: 1.5 }}
+          className="mt-8 md:mt-12 flex flex-col sm:flex-row items-start gap-3 sm:gap-5"
         >
           <Link
             href="/weine"
-            className="font-[family-name:var(--font-inter)] text-[12px] tracking-[0.25em] uppercase text-warmblack bg-gold hover:bg-gold-light px-10 py-4 transition-all duration-500 hover:shadow-[0_0_30px_rgba(197,164,126,0.2)]"
+            className="w-full sm:w-auto text-center font-[family-name:var(--font-inter)] text-[11px] sm:text-[12px] tracking-[0.25em] uppercase text-warmblack bg-gold hover:bg-gold-light px-8 sm:px-10 py-3.5 sm:py-4 transition-all duration-500 hover:shadow-[0_0_30px_rgba(201,168,76,0.2)]"
           >
-            Unsere Weine
+            Weine entdecken
           </Link>
           <Link
-            href="/weingut"
-            className="font-[family-name:var(--font-inter)] text-[12px] tracking-[0.25em] uppercase text-cream/80 border border-cream/25 px-10 py-4 hover:border-gold/50 hover:text-gold transition-all duration-500"
+            href="/erlebnis"
+            className="w-full sm:w-auto text-center font-[family-name:var(--font-inter)] text-[11px] sm:text-[12px] tracking-[0.25em] uppercase text-cream/80 border border-cream/25 px-8 sm:px-10 py-3.5 sm:py-4 hover:border-gold/50 hover:text-gold transition-all duration-500"
           >
-            Entdecken
+            Weinprobe buchen
           </Link>
         </motion.div>
       </div>
 
-      {/* Slide indicators */}
-      <div className="absolute bottom-20 left-1/2 -translate-x-1/2 z-10 flex gap-3">
-        {heroSlides.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => setCurrentSlide(i)}
-            className={`h-px transition-all duration-500 ${
-              i === currentSlide ? "bg-gold w-12" : "bg-cream/30 w-8"
-            }`}
-            aria-label={`Slide ${i + 1}`}
-          />
-        ))}
+      {/* ── RIGHT: Image Carousel ── */}
+      <div className="hidden lg:block relative w-1/2">
+        <AnimatePresence mode="sync">
+          <motion.div
+            key={currentSlide}
+            initial={{ opacity: 0, scale: 1.05 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.5, ease: "easeInOut" }}
+            className="absolute inset-0"
+          >
+            <Image
+              src={heroSlides[currentSlide].src}
+              alt={heroSlides[currentSlide].alt}
+              fill
+              priority
+              quality={90}
+              className="object-cover object-center image-sharp"
+              sizes="50vw"
+            />
+          </motion.div>
+        </AnimatePresence>
+
+        {/* Subtle overlay for depth */}
+        <div
+          className="absolute inset-0 z-[1] pointer-events-none"
+          style={{
+            background:
+              "linear-gradient(90deg, rgba(26,26,26,0.4) 0%, transparent 30%, transparent 70%, rgba(26,26,26,0.15) 100%)",
+          }}
+        />
+
       </div>
 
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2.5, duration: 1 }}
-        className="absolute bottom-8 left-1/2 z-10"
-        style={{ animation: "scrollBounce 2s infinite" }}
-      >
-        <div className="flex flex-col items-center gap-2">
-          <span className="font-[family-name:var(--font-inter)] text-[10px] tracking-[0.3em] uppercase text-cream/40">
-            Scroll
-          </span>
-          <div className="w-px h-8 bg-gradient-to-b from-cream/40 to-transparent" />
-        </div>
-      </motion.div>
+      {/* ── MOBILE: Background image ── */}
+      <div className="lg:hidden absolute inset-0 z-0">
+        <AnimatePresence mode="sync">
+          <motion.div
+            key={currentSlide}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.5, ease: "easeInOut" }}
+            className="absolute inset-0"
+          >
+            <Image
+              src={heroSlides[currentSlide].src}
+              alt={heroSlides[currentSlide].alt}
+              fill
+              priority
+              quality={85}
+              className="object-cover object-center image-sharp"
+              sizes="100vw"
+            />
+          </motion.div>
+        </AnimatePresence>
+        <div
+          className="absolute inset-0 z-[1]"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(26,26,26,0.75) 0%, rgba(26,26,26,0.55) 40%, rgba(26,26,26,0.7) 100%)",
+          }}
+        />
+      </div>
     </section>
   );
 }

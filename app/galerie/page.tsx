@@ -4,7 +4,7 @@ import Gallery from "@/components/gallery";
 
 export const metadata: Metadata = {
   title: "Galerie | Weingut Rainer Bauer",
-  description: "Impressionen aus dem Weingut Rainer Bauer — Weinberge, Keller, Familie und Trauben.",
+  description: "Impressionen aus dem Weingut Rainer Bauer - Weinberge, Keller, Familie und Trauben.",
 };
 
 export default function GaleriePage() {
@@ -13,9 +13,9 @@ export default function GaleriePage() {
       <PageHeader
         title="Momente aus dem"
         titleAccent="Weingut"
-        subtitle="Impressionen"
-        backgroundImage="/images/weinberg-sonnenuntergang.jpg"
-        backgroundAlt="Weinberge im goldenen Abendlicht"
+        subtitle="Galerie"
+        backgroundImage="/images/weinflaschen-sammlung.jpg"
+        backgroundAlt="Sammlung erlesener Weinflaschen des Weinguts"
       />
       <Gallery />
     </>

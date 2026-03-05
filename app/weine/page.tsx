@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { PageHeader } from "@/components/page-transition";
-import Wines from "@/components/wines";
+import WinesClient from "./wines-client";
 
 export const metadata: Metadata = {
-  title: "Unsere Weine | Weingut Rainer Bauer",
-  description: "Rotweine, Weißweine, Sekt und Destillate aus Talheim. Entdecken Sie Trollinger, Lemberger, Riesling und viele weitere Weine aus unserem Sortiment.",
+  title: "Weine | Weingut Rainer Bauer",
+  description:
+    "Rotweine, Weissweine, Sekt und Destillate aus Talheim. Entdecken Sie Trollinger, Lemberger, Riesling und viele weitere Weine.",
 };
 
 export default function WeinePage() {
@@ -13,11 +15,13 @@ export default function WeinePage() {
       <PageHeader
         title="Unsere"
         titleAccent="Weine"
-        subtitle="Weinsortiment"
+        subtitle="Sortiment"
         backgroundImage="/images/weinregal-dunkel.jpg"
         backgroundAlt="Edles Weinregal mit erlesener Flaschensammlung"
       />
-      <Wines />
+      <Suspense>
+        <WinesClient />
+      </Suspense>
     </>
   );
 }

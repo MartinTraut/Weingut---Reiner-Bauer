@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import Link from "next/link";
 import { ScrollReveal, LuxuryReveal } from "./scroll-reveal";
 
 export default function Contact() {
@@ -17,7 +16,7 @@ export default function Contact() {
     e.preventDefault();
     const subject = encodeURIComponent(
       formData.subject === "general"
-        ? "Anfrage über die Website"
+        ? "Anfrage ueber die Website"
         : formData.subject === "wine"
         ? "Weinbestellung"
         : formData.subject === "tasting"
@@ -32,27 +31,28 @@ export default function Contact() {
 
   return (
     <section className="relative section-padding bg-gradient-dark overflow-hidden">
-      {/* Decorative */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] max-w-3xl h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
 
       <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
-        <LuxuryReveal className="text-center mb-20 md:mb-28">
+        <LuxuryReveal className="text-center mb-16 md:mb-24">
           <p className="font-[family-name:var(--font-inter)] text-[11px] tracking-[0.4em] uppercase text-gold/80 mb-6">
             Kontakt
           </p>
-          <h2 className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl lg:text-6xl text-cream tracking-wide">
-            Besuchen Sie{" "}
-            <span className="italic text-gold/90">uns</span>
+          <h2 className="font-[family-name:var(--font-playfair)] text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-cream tracking-wide">
+            Wir freuen uns{" "}
+            <span className="italic text-gold/90">auf Sie</span>
           </h2>
+          <p className="font-[family-name:var(--font-cormorant)] text-lg sm:text-xl text-cream/65 max-w-2xl mx-auto mt-6">
+            Haben Sie Fragen zu unseren Weinen oder moechten eine Weinprobe buchen?
+            Schreiben Sie uns oder rufen Sie an.
+          </p>
           <div className="gold-line mx-auto mt-8" />
         </LuxuryReveal>
 
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20">
           {/* Left: Contact Info */}
           <ScrollReveal>
             <div className="space-y-10">
-              {/* Address */}
               <div className="flex items-start gap-5">
                 <div className="mt-1 shrink-0">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-6 h-6 text-gold/60">
@@ -67,13 +67,12 @@ export default function Contact() {
                   <p className="font-[family-name:var(--font-cormorant)] text-lg text-cream/70 leading-relaxed">
                     Weingut Rainer Bauer
                     <br />
-                    Betteläcker 1<br />
+                    Bettelaecker 1<br />
                     74388 Talheim
                   </p>
                 </div>
               </div>
 
-              {/* Phone */}
               <div className="flex items-start gap-5">
                 <div className="mt-1 shrink-0">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-6 h-6 text-gold/60">
@@ -96,7 +95,6 @@ export default function Contact() {
                 </div>
               </div>
 
-              {/* Email */}
               <div className="flex items-start gap-5">
                 <div className="mt-1 shrink-0">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-6 h-6 text-gold/60">
@@ -117,7 +115,6 @@ export default function Contact() {
                 </div>
               </div>
 
-              {/* Hours */}
               <div className="flex items-start gap-5">
                 <div className="mt-1 shrink-0">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-6 h-6 text-gold/60">
@@ -127,30 +124,29 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="font-[family-name:var(--font-playfair)] text-xl text-cream mb-2">
-                    Öffnungszeiten
+                    Oeffnungszeiten
                   </h3>
                   <div className="space-y-1.5">
                     <div className="flex justify-between gap-8">
-                      <span className="font-[family-name:var(--font-cormorant)] text-base text-cream/50">
-                        Montag – Freitag
+                      <span className="font-[family-name:var(--font-cormorant)] text-base text-cream/55">
+                        Montag - Freitag
                       </span>
-                      <span className="font-[family-name:var(--font-cormorant)] text-base text-cream/70">
-                        18:00 – 20:00
+                      <span className="font-[family-name:var(--font-cormorant)] text-base text-cream/75">
+                        18:00 - 20:00
                       </span>
                     </div>
                     <div className="flex justify-between gap-8">
-                      <span className="font-[family-name:var(--font-cormorant)] text-base text-cream/50">
+                      <span className="font-[family-name:var(--font-cormorant)] text-base text-cream/55">
                         Samstag
                       </span>
-                      <span className="font-[family-name:var(--font-cormorant)] text-base text-cream/70">
-                        09:30 – 16:00
+                      <span className="font-[family-name:var(--font-cormorant)] text-base text-cream/75">
+                        09:30 - 16:00
                       </span>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Social Media */}
               <div className="flex items-start gap-5">
                 <div className="mt-1 shrink-0">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-6 h-6 text-gold/60">
@@ -180,7 +176,7 @@ export default function Contact() {
           <ScrollReveal direction="right">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label className="font-[family-name:var(--font-inter)] text-[11px] tracking-[0.2em] uppercase text-cream/50 block mb-2">
+                <label className="font-[family-name:var(--font-inter)] text-[11px] tracking-[0.2em] uppercase text-cream/55 block mb-2">
                   Name *
                 </label>
                 <input
@@ -197,7 +193,7 @@ export default function Contact() {
 
               <div className="grid sm:grid-cols-2 gap-6">
                 <div>
-                  <label className="font-[family-name:var(--font-inter)] text-[11px] tracking-[0.2em] uppercase text-cream/50 block mb-2">
+                  <label className="font-[family-name:var(--font-inter)] text-[11px] tracking-[0.2em] uppercase text-cream/55 block mb-2">
                     E-Mail *
                   </label>
                   <input
@@ -212,7 +208,7 @@ export default function Contact() {
                   />
                 </div>
                 <div>
-                  <label className="font-[family-name:var(--font-inter)] text-[11px] tracking-[0.2em] uppercase text-cream/50 block mb-2">
+                  <label className="font-[family-name:var(--font-inter)] text-[11px] tracking-[0.2em] uppercase text-cream/55 block mb-2">
                     Telefon
                   </label>
                   <input
@@ -228,7 +224,7 @@ export default function Contact() {
               </div>
 
               <div>
-                <label className="font-[family-name:var(--font-inter)] text-[11px] tracking-[0.2em] uppercase text-cream/50 block mb-2">
+                <label className="font-[family-name:var(--font-inter)] text-[11px] tracking-[0.2em] uppercase text-cream/55 block mb-2">
                   Anliegen
                 </label>
                 <select
@@ -254,7 +250,7 @@ export default function Contact() {
               </div>
 
               <div>
-                <label className="font-[family-name:var(--font-inter)] text-[11px] tracking-[0.2em] uppercase text-cream/50 block mb-2">
+                <label className="font-[family-name:var(--font-inter)] text-[11px] tracking-[0.2em] uppercase text-cream/55 block mb-2">
                   Nachricht *
                 </label>
                 <textarea
@@ -271,7 +267,7 @@ export default function Contact() {
 
               <button
                 type="submit"
-                className="w-full sm:w-auto font-[family-name:var(--font-inter)] text-[12px] tracking-[0.25em] uppercase text-warmblack bg-gold hover:bg-gold-light px-12 py-4 transition-all duration-500 mt-4 hover:shadow-[0_0_30px_rgba(197,164,126,0.2)]"
+                className="w-full sm:w-auto font-[family-name:var(--font-inter)] text-[12px] tracking-[0.25em] uppercase text-warmblack bg-gold hover:bg-gold-light px-12 py-4 transition-all duration-500 mt-4 hover:shadow-[0_0_30px_rgba(201,168,76,0.2)]"
               >
                 Nachricht senden
               </button>
@@ -280,7 +276,7 @@ export default function Contact() {
         </div>
 
         {/* Google Maps */}
-        <ScrollReveal className="mt-20 md:mt-28">
+        <ScrollReveal className="mt-16 md:mt-24">
           <div className="relative border border-gold/10 overflow-hidden">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2611.5!2d9.193!3d49.084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4799b3f8d3a0f0a1%3A0x0!2sBettel%C3%A4cker%201%2C%2074388%20Talheim!5e0!3m2!1sde!2sde!4v1"
@@ -290,7 +286,7 @@ export default function Contact() {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Weingut Rainer Bauer — Standort"
+              title="Weingut Rainer Bauer Standort"
               className="w-full"
             />
             <div className="absolute inset-0 pointer-events-none border border-gold/10" />

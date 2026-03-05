@@ -4,7 +4,7 @@ import About from "@/components/about";
 
 export const metadata: Metadata = {
   title: "Das Weingut | Weingut Rainer Bauer",
-  description: "Seit 1989 führen wir unser Familienweingut in Talheim mit Leidenschaft. Erfahren Sie die Geschichte von Rainer, Bärbel, Martin und Tanja Bauer.",
+  description: "Seit 1989 fuehren wir unser Familienweingut in Talheim mit Leidenschaft. Erfahren Sie die Geschichte von Rainer, Baerbel, Martin und Tanja Bauer.",
 };
 
 export default function WeingutPage() {
@@ -14,8 +14,8 @@ export default function WeingutPage() {
         title="Das"
         titleAccent="Weingut"
         subtitle="Unsere Geschichte"
-        backgroundImage="/images/weingut-terrasse.jpg"
-        backgroundAlt="Weingut-Terrasse bei Sonnenuntergang"
+        backgroundImage="/images/weinflaschen-holzkiste-premium.jpg"
+        backgroundAlt="Premium Weinflaschen in edler Holzkiste"
       />
       <About />
     </>
